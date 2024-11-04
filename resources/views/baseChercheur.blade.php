@@ -32,12 +32,22 @@
 					</button>
 			</div>
 			<div class="p-4">
-				<h1><a href="{{route('home')}}" class="logo">Publi-lab</a></h1>
+				<h1><a href="{{route('visiteur.article')}}" class="logo">Publi-lab</a></h1>
                 <div class="mt-4">
                     <div>
                         <ul class="list-unstyled components mb-5">
                             <li class="mb-3"><a href="{{route('chercheur.espace')}}"><span class="fas fa-book mr-3"></span>Mes articles</a></li>
                             <li class="mb-3"><a href="{{route('chercheur.publierArticle')}}"><span class="fas fa-feather-alt mr-3"></span>Publier un article</a></li>
+                            <li class="mb-3"><a href="{{route('chercheur.enregistrerRevueFormulaire')}}"><span class="fas fa-journal-whills mr-3"></span>Enregistrer une revue</a></li>
+
+                            <li class="mb-3"><a href="{{route('chercheur.listeRevues')}}"><span class="fas fa-list mr-3"></span>Liste des Revues</a></li>
+
+                            <li class="mb-3">
+                                <a href="{{ route('chercheur.associer-article-revue') }}">
+                                    <span class="fas fa-link mr-3"></span>Associer article-revue
+                                </a>
+                            </li>
+
                             <li class="mb-3"><a href="{{route('home')}}"><span class="fa-solid fa-house mr-3"></span>Page de visite</a></li>
                             <li class="mb-3"><a href="{{route('chercheur.profil')}}"><span class="fa-regular fa-user mr-3"></span> Profil</a></li>
                             <li class=" d-flex flex-column">
@@ -79,6 +89,7 @@
 <script src={{asset('assets/bootstrap/jquery-3.7.1.min.js')}}></script>
 <script src={{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}></script>
 <script src={{asset('assets/js/main.js')}}></script>
+
 {{-- <script src="js/popper.js"></script> --}}
 </body>
 </html>

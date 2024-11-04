@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div id="content" class="p-4 p-md-5 pt-5 mt-4 ">
+    <div id="content" class="p-4 p-md-5 pt-5 mt-4">
         @if (Session::has('error'))
             <div class="alert alert-danger" role="alert">
                 <span>{{ session('error') }}</span>
@@ -45,11 +45,11 @@
                 </div>
 
                 <div class="form-group row mb-4">
-                    <label for="article-document" class="col-sm-3 col-form-label">Document PDF</label>
+                    <label for="article-document" class="col-sm-3 col-form-label">Document PDF ou Word</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="article-document" name="document" accept=".pdf">
+                        <input type="file" class="form-control" id="article-document" name="document" accept=".pdf,.docx">
                         <small class="form-text text-muted">
-                            Uniquement les fichiers PDF sont autorisés
+                            Uniquement les fichiers PDF et DOCX sont autorisés
                         </small>
                     </div>
                 </div>
@@ -57,10 +57,22 @@
                 <div class="form-group row mb-4">
                     <label for="article-image" class="col-sm-3 col-form-label">Image du Document</label>
                     <div class="col-sm-9">
-                        <input type="file" class="form-control" id="article-image" name="image_document" accept=".jpg,.png">
+                        <input type="file" class="form-control" id="article-image" name="image_document" accept=".jpg,.png,.jpeg">
                         <small class="form-text text-muted">
-                            Uniquement les fichiers JPG/PNG
+                            Uniquement les fichiers JPG, PNG et JPEG sont autorisés
                         </small>
+                    </div>
+                </div>
+
+                <div class="form-group row mb-4">
+                    <label for="article-revue" class="col-sm-3 col-form-label">Revue associée</label>
+                    <div class="col-sm-9">
+                        <select name="revue" id="article-revue" class="form-control">
+                            <option value="" selected disabled>Sélectionner la revue</option>
+                            @foreach ($revues as $revue)
+                                <option value="{{ $revue->id }}">{{ $revue->titre }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
 

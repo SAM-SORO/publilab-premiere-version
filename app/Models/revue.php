@@ -16,5 +16,6 @@ class Revue extends Model
     public function articles()
     {
         return $this->belongsToMany(Article::class, 'contenir', 'num_rev', 'num_art');
+
     }
 }

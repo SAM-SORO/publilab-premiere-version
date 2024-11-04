@@ -225,6 +225,7 @@ a[data-toggle="collapse"] {
     list-style: none;
 }
 
+/*
 a {
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
@@ -239,5 +240,5 @@ a:hover, a:focus {
     color: green !important;
     font-weight: bold;
 
-}
+} */
 

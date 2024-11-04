@@ -138,11 +138,10 @@ $('#submit-enregistrer-chercheur').click(function(event) {
 $('#submit-inscription').click(function(event) {
     event.preventDefault();
 
-
     var username = $('#username').val();
     var email = $('#email').val();
     var password = $('#password').val();
-    var passwordConfirmation = $('#confirm-password').val();
+    var passwordConfirmation = $('#password_confirmation').val(); // Utiliser le bon ID
     var passwordLength = password.length;
     var errors = false;
 
@@ -174,15 +173,15 @@ $('#submit-inscription').click(function(event) {
             // Vérification de la confirmation du mot de passe
             if (passwordConfirmation) {
                 if (password === passwordConfirmation) {
-                    $('#confirm-password').removeClass('is-invalid').addClass('is-valid');
+                    $('#password_confirmation').removeClass('is-invalid').addClass('is-valid');
                     $('#error-confirm-password').text('');
                 } else {
-                    $('#confirm-password').removeClass('is-valid').addClass('is-invalid');
+                    $('#password_confirmation').removeClass('is-valid').addClass('is-invalid');
                     $('#error-confirm-password').text('Les mots de passe ne correspondent pas');
                     errors = true;
                 }
             } else {
-                $('#confirm-password').removeClass('is-valid').addClass('is-invalid');
+                $('#password_confirmation').removeClass('is-valid').addClass('is-invalid');
                 $('#error-confirm-password').text('Veuillez confirmer le mot de passe');
                 errors = true;
             }
@@ -201,10 +200,8 @@ $('#submit-inscription').click(function(event) {
     if (!errors) {
         $('#form-inscription').submit();
     }
-
-    // Empêcher la soumission du formulaire si des erreurs sont présentes
-    event.preventDefault();
 });
+
 
 
 
